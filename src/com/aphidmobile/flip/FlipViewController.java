@@ -41,7 +41,7 @@ public class FlipViewController extends AdapterView<Adapter> {
 		void onViewFlipped(View view, int position);
 		void top();
 		void bottom();
-		void onAngleChange(float angle,int index);
+//		void onAngleChange(float angle,int index);
 	}	
 
 	private static final int MSG_SURFACE_CREATED = 1;
@@ -470,8 +470,8 @@ public class FlipViewController extends AdapterView<Adapter> {
 		if(onViewFlipListener != null)
 			onViewFlipListener.bottom();
 	}
-	public void angleChange(float angle,int index){
-		if(onViewFlipListener != null)
-			onViewFlipListener.onAngleChange(angle,index);
-	}
+//	public void angleChange(float angle,int index){
+//		if(onViewFlipListener != null)
+//			onViewFlipListener.onAngleChange(angle,index);
+//	}
 }

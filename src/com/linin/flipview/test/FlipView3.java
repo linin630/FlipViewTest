@@ -6,7 +6,6 @@ import com.aphidmobile.flip.FlipViewController.ViewFlipListener;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class FlipView3 extends FlipView2 implements ViewFlipListener{
@@ -36,12 +35,14 @@ public class FlipView3 extends FlipView2 implements ViewFlipListener{
 		Toast.makeText(this, "bottom!", Toast.LENGTH_SHORT).show();
 	}
 
-	@Override
-	public void onAngleChange(float angle,int index) {
-//		if(index==0){
-//			if(angle<180-30){
-//				Log.i("test", "↓下拉刷新");
+//	@Override
+//	public void onAngleChange(float angle,int index) {
+//		if(index==-1){//-1是top、0是bottom
+//			if(angle>180-30){
+//				Log.i("test", "↓下拉刷新"+index);
+//			}else if(angle<30){
+//				Log.i("test", "↑下拉刷新"+index);
 //			}
 //		}
-	}
+//	}
 }

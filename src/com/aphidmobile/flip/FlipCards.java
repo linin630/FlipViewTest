@@ -247,7 +247,6 @@ public class FlipCards {
 						angleDelta = 180 * delta / controller.getContentWidth() * MOVEMENT_RATE;
 					}
 					angle += angleDelta;
-					controller.angleChange(angle,frontCards.getIndex());//因为角度时时刻刻在改变，所以调用次数很多
 					if (backCards.getIndex() == -1) {
 						if (angle >= MAX_TIP_ANGLE){
 							angle = MAX_TIP_ANGLE;
@@ -287,6 +286,7 @@ public class FlipCards {
 						lastX = event.getX();
 					}
 					controller.getSurfaceView().requestRender();
+//					controller.angleChange(angle,frontCards.getIndex());//因为角度时时刻刻在改变，所以调用次数很多
 					return true;
 				}
 
