@@ -17,6 +17,7 @@ limitations under the License.
 
 package com.aphidmobile.flip;
 
+import android.util.Log;
 import android.view.*;
 import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.TextureUtils;

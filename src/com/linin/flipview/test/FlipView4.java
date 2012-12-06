@@ -1,9 +1,7 @@
 package com.linin.flipview.test;
 
-import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.FlipViewController.ViewFlipListener;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,14 +24,14 @@ public class FlipView4 extends FlipView1 implements ViewFlipListener{
 
 	@Override
 	public void onViewFlipped(View view, int position) {
-		// TODO Auto-generated method stub
-		
+		refresh.setVisibility(View.INVISIBLE);
 	}
 
 	@Override
 	public boolean top(float angle) {
+		refresh.setVisibility(View.VISIBLE);
 		if(angle>180-45){
-			refresh.setText("↑下拉刷新");
+			refresh.setText("↓下拉刷新");
 		}else{
 			refresh.setText("↑松开刷新");
 			return false;//返回false则调用一次结束，等松开手后才能再调用top方法
@@ -43,7 +41,6 @@ public class FlipView4 extends FlipView1 implements ViewFlipListener{
 
 	@Override
 	public boolean bottom(float angle) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }
