@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class FlipView1 extends Activity{
 	
-	private FlipViewController flipView;
+	public FlipViewController flipView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

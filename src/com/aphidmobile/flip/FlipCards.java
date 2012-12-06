@@ -55,7 +55,6 @@ public class FlipCards {
 	private boolean visible = false;
 	
 	private boolean topbottom = true;
-	private boolean angleChange = true;
 
 	public FlipCards(FlipViewController controller, boolean orientationVertical) {
 		this.controller = controller;
@@ -248,24 +247,18 @@ public class FlipCards {
 					}
 					angle += angleDelta;
 					if (backCards.getIndex() == -1) {
+						if(topbottom){
+							topbottom = controller.bottombottom(angle);
+						}
 						if (angle >= MAX_TIP_ANGLE){
 							angle = MAX_TIP_ANGLE;
-							if(topbottom){
-								controller.bottombottom();
-								topbottom = false;
-							}
-						}else{
-							topbottom = true;
 						}
 					} else if (backCards.getIndex() == 0) {
+						if(topbottom){
+							topbottom = controller.toptop(angle);
+						}
 						if (angle <= 180 - MAX_TIP_ANGLE){
 							angle = 180 - MAX_TIP_ANGLE;
-							if(topbottom){
-								controller.toptop();
-								topbottom = false;
-							}
-						}else{
-							topbottom = true;
 						}
 					}
 					if (angle < 0) {
@@ -286,12 +279,12 @@ public class FlipCards {
 						lastX = event.getX();
 					}
 					controller.getSurfaceView().requestRender();
-//					controller.angleChange(angle,frontCards.getIndex());//因为角度时时刻刻在改变，所以调用次数很多
 					return true;
 				}
 
 				return isOnTouchEvent;
 			case MotionEvent.ACTION_UP:
+				topbottom = true;//reset the topbottom
 			case MotionEvent.ACTION_CANCEL:
 				if (state == STATE_TOUCH) {
 					if(orientationVertical){

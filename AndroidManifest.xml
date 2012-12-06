@@ -25,6 +25,7 @@
         <activity android:name="com.linin.flipview.test.FlipView1"/>
         <activity android:name="com.linin.flipview.test.FlipView2"/>
         <activity android:name="com.linin.flipview.test.FlipView3"/>
+        <activity android:name="com.linin.flipview.test.FlipView4"/>
     </application>
 
 </manifest>

@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		addItem("flipView的简单使用", FlipView1.class);
 		addItem("flipView自定义布局", FlipView2.class);
 		addItem("flipView监听器", FlipView3.class);
+		addItem("flipView下拉效果", FlipView4.class);
 	}
 	private void addItem(String title,Class<?> cls){
 		Map<String,Object> map = new HashMap<String, Object>();

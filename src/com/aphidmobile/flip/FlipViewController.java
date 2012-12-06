@@ -39,9 +39,8 @@ public class FlipViewController extends AdapterView<Adapter> {
 	
 	public static interface ViewFlipListener {
 		void onViewFlipped(View view, int position);
-		void top();
-		void bottom();
-//		void onAngleChange(float angle,int index);
+		boolean top(float angle);
+		boolean bottom(float angle);
 	}	
 
 	private static final int MSG_SURFACE_CREATED = 1;
@@ -462,13 +461,17 @@ public class FlipViewController extends AdapterView<Adapter> {
 			});
 		}
 	}
-	public void toptop(){
+	public boolean toptop(float angle){
+		boolean bl = false;
 		if(onViewFlipListener != null)
-			onViewFlipListener.top();
+			bl = onViewFlipListener.top(angle);
+		return bl;
 	}
-	public void bottombottom(){
+	public boolean bottombottom(float angle){
+		boolean bl = false;
 		if(onViewFlipListener != null)
-			onViewFlipListener.bottom();
+			bl = onViewFlipListener.bottom(angle);
+		return bl;
 	}
 //	public void angleChange(float angle,int index){
 //		if(onViewFlipListener != null)
